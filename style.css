@@ -1,0 +1,140 @@
+.introduccion h2,p{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+}
+.formulario1{
+   display: flex;
+   flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-content: center;
+}
+.formulario1 .grupo_formulario{
+    width: 45%;
+}
+.formulario_label{
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    color:#002855 ;
+    text-align: center;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+.introduccion {
+    color: #002855;
+    text-align: center;
+}
+.formulario_input{
+    position: relative;
+    width: 100%;
+    
+
+}
+.allinput{
+    width: 90%;
+    border:3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px ;
+    transition: .3 ease all;
+    border:1px solid #002855;
+}
+.allinput:focus{
+    border: 3px solid #008eaa;
+    outline: none;
+    box-shadow: 3px 0px 30px  rgba(163, 163,163, 0.4);
+}
+.formulario_error{
+    font-size:12px ;
+    margin: 0;
+    display: none; 
+    margin-top: 5px; 
+}
+.formulario_error-activo{
+    display: block;
+}
+.formulario_validacion-estadp{
+   position: absolute;
+   right: 10px;
+   bottom: 15px; 
+   z-index: 100;
+   font-size: 16px;
+   opacity: 0;
+}
+.formulario_mensaje{
+    grid-column: span 2;
+    height: 45px;
+    line-height: 45px;
+    background-color:#8ac4cf ;
+    padding: 8px 15px;
+    border-radius: 3px;
+    color: #002855;   
+    width: 70%;
+    display: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   
+}
+.formulario_mensaje-activo{
+    display: block;
+}
+.formulario_mensaje p{
+    margin: 0;
+}
+.formulario_grupo-btn-enviar{
+    display: flex;
+    align-content: center;
+    flex-direction: column;  
+    align-items: center;
+   
+}
+.formulario_btn{
+    line-height: 45px;
+    background-color: #002855;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor:pointer;
+    transition: 1s ease all;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+}
+.formulario_btn a{
+    text-decoration: none;
+    color: white;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.formulario_btn:hover{
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, alph,1);
+}
+/*- estilos validacion-*/
+.grupo_formulario-correcto .allinput:focus{
+    border-color:#f3e600 ;
+    opacity: 1;
+}
+
+
+.grupo_formulario-incorrecto .allinput{
+   border:3px solid red;
+}
+
+.encabezado .logo{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+@media (max-width: 578px){
+    .formulario1 .grupo_formulario{
+        width: 100%;
+    }
+
+}
+   
+      
+   

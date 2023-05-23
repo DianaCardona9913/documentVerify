@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Verify</title>
+    <!--<script src="js.js"></script>-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="encabezado">
+       <div id="Logo" class="logo">
+            <img src="img/logo-removebg-preview.png" alt="" width="250px">
+        </div>
+
+        <div class="introduccion">
+            <h2>Bienvedido viajero</h2>
+            <p>Aqui podras verificar los datos que necesitas para tu proximo vuelo ingresando los siguientes datos:</p>
+        </div>
+    </div>
+    <div class="contenido">
+        <form action="paso1" class="formulario1" id="formulario1" name="formulario1">
+            <!--Apellido-->
+            <div class="grupo_formulario"id="grupo_apellido">
+                <label for="apellido" class="formulario_label"><b>Apellido </b></label>
+                <div class="formulario_input">
+                 <input type="text" placeholder="Apellido" id="apellido" class="allinput" name="apellido" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="formulario_validacion-estadp" width="15px">
+                </div>
+                <p class="formulario_error">Este espacio no debe estar vacio y solo debe contener letras</p>
+            </div>
+
+             <!--Reserva-->
+            <div class="grupo_formulario" id="grupo_reserva">
+                <label for="reserva" class="formulario_label"><b>Reserva</b></label>
+                <div class="formulario_input">
+                 <input type="text" placeholder="Reserva" id="reserva" class="allinput" name="reserva" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="formulario_validacion-estadp" width="15px">
+                </div>
+                <p class="formulario_error">Por favor llenar correctamente sin espacios, sin iconos y sin elementos</p>
+            </div>
+
+            <div class="formulario_mensaje" id="formulario_mensaje">
+                <p> <img src="img/alerta.png" width="20px"><b>Error: </b> por favor completar todo el formulario de forma correcta</p>
+            </div>
+
+            <div class="grupo_formulario formulario_grupo-btn-enviar"  >
+                <button type="submit" class="formulario_btn" id="buttonreg" onclick="obtenerdatos()" ><a href="documentacion.html"  target="_blank">Buscar</a> </button>
+            </div>
+
+          
+          
+        </form>
+       <script src="guardar_datos.js"></script>
+        <script>const formulario= document.getElementById('formulario1');
+            const inputs= document.querySelectorAll('#formulario1 input')
+            const expresiones = {
+                reserva: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+                apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+            }
+
+            const campos={
+                reserva:false,
+                apellido:false,
+            }
+
+            const validarform=(e) =>{
+                switch (e.target.name){
+                    case "reserva":
+                        if(expresiones .reserva.test(e.target.value)) {
+                            document.getElementById('grupo_reserva').classList.remove('grupo_formulario-incorrecto');
+                            document.getElementById('grupo_reserva').classList.add('grupo_formulario-correcto');
+                            document.querySelector('#grupo_reserva .formulario_error') .classList.remove('formulario_error-activo')
+                            campos['reserva']=true;
+                            
+                        } else{
+                            document.getElementById('grupo_reserva').classList.add('grupo_formulario-incorrecto');
+                            document.getElementById('grupo_reserva').classList.remove('grupo_formulario-correcto');
+                            document.querySelector('#grupo_reserva .formulario_error') .classList.add('formulario_error-activo')
+                            campos['reserva']=false;
+                        }
+                    
+                    break;
+                    case "apellido":
+                    if(expresiones .apellido.test(e.target.value)) {
+                            document.getElementById('grupo_apellido').classList.remove('grupo_formulario-incorrecto');
+                            document.getElementById('grupo_apellido').classList.add('grupo_formulario-correcto');
+                            document.querySelector('#grupo_apellido .formulario_error') .classList.remove('formulario_error-activo')
+                            campos['apellido']=true;
+                            
+                        } else{
+                            document.getElementById('grupo_apellido').classList.add('grupo_formulario-incorrecto');
+                            document.getElementById('grupo_apellido').classList.remove('grupo_formulario-correcto');
+                            document.querySelector('#grupo_apellido .formulario_error') .classList.add('formulario_error-activo')
+                            campos['apellido']=false;
+                        } 
+                    
+                    break;
+                }
+            }
+            
+            inputs.forEach((input) => {
+                input.addEventListener('keyup',validarform);
+                input.addEventListener('blur',validarform);
+            });
+            
+            formulario.addEventListener('submit',(e) =>{
+                //e.preventDefault();//enviar datos
+                if(campos.apellido && campos.reserva){
+                    formulario.reset();
+                    
+                }else{
+                    document.getElementById('formulario_mensaje').classList.add('formulario_mensaje-activo')
+                }
+             
+            })
+           
+            
+
+            </script>
+
+            
+    </div>
+    
+</body>
+</html>

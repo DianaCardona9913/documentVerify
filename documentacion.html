@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentacion</title>
+    <link rel="import" href="PaginaInicio.html">
+    <link rel="stylesheet" href="style2.css">
+</head>
+ <body>
+    <div class="encabezado">
+        <div class="logo">
+            <img src="img/logo-removebg-preview.png" alt="" width="250px">
+        </div>
+
+        <div class="introduccion">
+          <h2>Hola viajero</h2>
+          <p id="bienvenida"></p>
+        </div>
+    </div>
+
+    <div>
+        <table >
+            <tr>
+                <th>Nombre: </th> <td id="apellido1"> </td>
+                <th>Numero de reserva:</th> <td id="reserva"> </td>
+                <th>Numero de vuelo: </th><td id="nvuelo"> VH 320 </td>  
+            </tr>
+            <tr>
+                <th>Aeropuerto de partida</th> <td > Aeropuerto Internacional José María Córdova - MDE</td>
+                <th>Hora de partida: </th> <td > 10:40 am </td>
+                <th>Fecha de partida: </th> <td >---------</td>
+            </tr>
+            <tr>
+                <th>Artopuero de  llegada: </th> <td>Aeropuerto Internacional de Miami - MIA</td>
+                <th>Hora de llegada: </th> <td > 3:09 pm </td>
+                <th>Fecha de llegada: </th> <td >---------</td>
+
+            </tr>
+        </table>
+        <h2>DATOS BASICOS</h2>
+    </div>
+
+    <div class="dform">
+        <form action="paso2" id="dform" name="dform" class="form">
+            <!--NOMBRE-->
+            <div class="grupo_form"id="grupo_nombre">
+                <label for="nombre" class="form_label"><b>Nombre </b></label>
+                <div class="form_input">
+                 <input type="text" placeholder="Nombre" id="nombre" class="allinput" name="nombre" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="validacion" width="15px">
+                </div>
+                <p class="formulario_error">Este espacio no debe estar vacio y solo debe contener letras</p>
+            </div>
+            <!--Apellido-->
+            <div class="grupo_form"id="grupo_apellido">
+                <label for="apellido" class="form_label"><b>Apellido</b></label>
+                <div class="form_input">
+                 <input type="text" placeholder="Apellido" id="apellido" class="allinput" name="apellido" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="validacion" width="15px">
+                </div>
+                <p class="formulario_error">Este espacio no debe estar vacio y solo debe contener letras</p>
+            </div>
+            <!--Pasaporte-->
+            <div class="grupo_form"id="grupo_pasaporte">
+                <label for="pasaporte" class="form_label"><b>Numero de pasaporte</b></label>
+                <div class="form_input">
+                 <input type="text" placeholder="Numero de pasaporte" id="pasaporte" class="allinput" name="pasaporte" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="validacion" width="15px">
+                </div>
+                <p class="formulario_error">Este espacio no debe estar vacio ni debe contener caracteres especiales</p>
+            </div>
+            <!--Expedicion pasaporte-->
+            <div class="grupo_form"id="grupo_expasaporte">
+                <label for="expasaporte" class="form_label"><b>Fecha de expedicion del pasaporte</b></label>
+                <div class="form_input">
+                 <input type="date" placeholder="Fecha de expedicion del pasaporte" id="expasaporte" class="allinput" name="expasaporte" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="validacion" width="15px">
+                </div>
+                <p class="formulario_error">Este espacio no debe estar vacio</p>
+            </div>
+            <!--visa-->
+            <div class="grupo_form"id="grupo_visa">
+                <label for="visa" class="form_label"><b>Numero de visa</b></label>
+                <div class="form_input">
+                 <input type="text" placeholder="Numero de visa" id="visa" class="allinput" name="visa" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="validacion" width="15px">
+                </div>
+                <p class="formulario_error">Este espacio no debe estar vacio ni debe contener caracteres especiales</p>
+            </div>
+            <!--Expedicion visa-->
+            <div class="grupo_form"id="grupo_exvisa">
+                <label for="exvisa" class="form_label"><b>Fecha de expedicion de la visa</b></label>
+                <div class="form_input">
+                 <input type="date" placeholder="Fecha de expedicion de la visa" id="exvisa" class="allinput" name="exvisa" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="validacion" width="15px">
+                </div>
+                <p class="formulario_error">Este espacio no debe estar vacio</p>
+            </div>
+
+            <h2> Covid requerimientos </h2>
+
+            <!--Certificado de vacunacion-->
+            <div class="grupo_form"id="grupo_vacuna">
+                <label for="vacuna" class="form_label"><b>Certificado de vacunacion</b></label>
+                <p> Tu certificado de vacunacion debe subirse en formato jpeg</p>
+                <div class="form_input">
+                 <input type="file" placeholder="Certificado de vacunacion" id="vacuna" class="allinput" name="vacuna" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="validacion" width="15px">
+                </div>
+                <p class="formulario_error">Este espacio no debe estar vacio y debe estar en formato jpeg</p>
+            </div>
+            <!--Prueba de covid-->
+            <div class="grupo_form"id="grupo_prueba">
+                <label for="vacuna" class="form_label"><b>Prueba de covid negativa</b></label>
+                <p> Tu prueba de covid debe subirse en formato jpeg</p>
+                <div class="form_input">
+                 <input type="file" placeholder="Prueba de covid" id="prueba" class="allinput" name="prueba" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="validacion" width="15px">
+                </div>
+                <p class="formulario_error">Este espacio no debe estar vacio y debe estar en formato jpeg</p>
+            </div>
+
+            <h2>Formatos requeridos</h2>
+
+            <!--Check-Mig-->
+            <div class="grupo_form"id="grupo_migcol">
+                <label for="migcol" class="form_label"><b>Check-Mig</b></label>
+                <p>Para tu entrada y salida de Colombia es necesario llenar el formato migratorio "Check-Mig" el cual puedes completar <a href="https://apps.migracioncolombia.gov.co/pre-registro/public/preregistro.jsf">aqui</a></p>
+                <div class="form_input">
+                 <input type="file" placeholder="Check-Mig" id="migcol" class="allinput" name="migcol" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="validacion" width="15px">
+                </div>
+                <p class="formulario_error">Este espacio no debe estar vacio y debe estar en formato jpeg</p>
+            </div>
+
+            <!--Atestacion-->
+            <div class="grupo_form"id="grupo_migusa">
+                <label for="migusa" class="form_label"><b>Formulario de atestación</b></label>
+                <p>Para tu entrada a Estados Unidos es necesario llenar el formulario de atestación el cual puede encontrar <a href="https://www.cdc.gov/quarantine/pdf/fillable-attestation-spanish-p.pdf">aqui</a></p>
+                <div class="form_input">
+                 <input type="file" placeholder="migusa" id="migusa" class="allinput" name="migusa" >
+                 <img src="img/circle-xmark-regular.svg" alt="x" class="validacion" width="15px">
+                </div>
+                <p class="formulario_error">Este espacio no debe estar vacio y debe estar en formato jpeg</p>
+            </div>
+
+             <!--Terminos y condiciones-->
+            <div class="grupo_form" id="grupo_tyc">
+                <label class="form_label">
+                    <input type="checkbox" name="tyc" id="tyc" class="form_checkbox"> Acepto terminos y condiciones
+                </label>
+            </div>
+
+            <!--Mesaje error-->
+            <div class="formulario_mensaje" id="formulario_mensaje">
+                <p> <img src="img/alerta.png" width="20px"><b>Error: </b> por favor completar todo el formulario de forma correcta</p>
+            </div>
+
+             <!--boton-->
+            <div class="grupo_form form_enviar"  >
+                <button type="submit" class="form_btn" id="buttonreg" onclick="almacendatos()" ><a href="codigoQR.html"  target="_blank">Crear codigo QR</a> </button>
+            </div>
+           
+            
+
+
+
+        </form>
+
+    </div>
+
+        <script src="almacenar_datos.js"></script>
+        <script>
+           function pintar(){
+            let valores = JSON.parse(window.localStorage.getItem('user'));
+            let destino="Miami"
+
+
+            document.getElementById('bienvenida').innerHTML="Bienvenid@ a Document verify aqui podras verificar la documentacion requerida para tu vuelo con destino a " +destino
+            document.getElementById('reserva').innerHTML=(valores.reserva)
+            document.getElementById('apellido1').innerHTML= (valores.apellido)
+         }
+         window.onload = function() {
+            pintar()
+         };
+
+         const formulario= document.getElementById('dform');
+            const inputs= document.querySelectorAll('#dform input')
+            const expresiones = {
+                alfanumerico: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+                letras: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+            }
+          const file={
+            vacuna1: document.getElementById('vacuna'),
+            prueba1: document.getElementById('prueba'),
+            migcol1: document.getElementById('migcol'),
+            migusa1: document.getElementById('migusa')
+          }
+
+            const campos={
+                nombre:false,
+                apellido:false,
+                pasaporte:false,
+                expasaporte:false,
+                visa:false,
+                exvisa:false,
+                vacuna:false,
+                prueba:false,
+                migcol:false,
+                migusa:false,
+
+            }
+
+            const validarform=(e) =>{
+                switch (e.target.name){
+                    case "nombre":
+                        if(expresiones .letras.test(e.target.value)) {
+                            document.getElementById('grupo_nombre').classList.remove('grupo_form-incorrecto');
+                            document.getElementById('grupo_nombre').classList.add('grupo_form-correcto');
+                            document.querySelector('#grupo_nombre .formulario_error') .classList.remove('formulario_error-activo')
+                            campos['nombre']=true;
+                            
+                        } else{
+                            document.getElementById('grupo_nombre').classList.add('grupo_form-incorrecto');
+                            document.getElementById('grupo_nombre').classList.remove('grupo_form-correcto');
+                            document.querySelector('#grupo_nombre .formulario_error') .classList.add('formulario_error-activo')
+                            campos['nombre']=false;
+                        }
+                    
+                    break;
+
+                    case "apellido":
+                        if(expresiones .letras.test(e.target.value)) {
+                            document.getElementById('grupo_apellido').classList.remove('grupo_form-incorrecto');
+                            document.getElementById('grupo_apellido').classList.add('grupo_form-correcto');
+                            document.querySelector('#grupo_apellido .formulario_error') .classList.remove('formulario_error-activo')
+                            campos['nombre']=true;
+                            
+                        } else{
+                            document.getElementById('grupo_apellido').classList.add('grupo_form-incorrecto');
+                            document.getElementById('grupo_apellido').classList.remove('grupo_form-correcto');
+                            document.querySelector('#grupo_apellido .formulario_error') .classList.add('formulario_error-activo')
+                            campos['apellido']=false;
+                        } 
+                    
+                    break;
+
+                    case "pasaporte":
+                    if(expresiones .alfanumerico.test(e.target.value)) {
+                            document.getElementById('grupo_pasaporte').classList.remove('grupo_form-incorrecto');
+                            document.getElementById('grupo_pasaporte').classList.add('grupo_form-correcto');
+                            document.querySelector('#grupo_pasaporte .formulario_error') .classList.remove('formulario_error-activo')
+                            campos['pasaporte']=true;
+                            
+                        } else{
+                            document.getElementById('grupo_pasaporte').classList.add('grupo_form-incorrecto');
+                            document.getElementById('grupo_pasaporte').classList.remove('grupo_form-correcto');
+                            document.querySelector('#grupo_pasaporte .formulario_error') .classList.add('formulario_error-activo')
+                            campos['pasaporte']=false;
+                        } 
+                    break;
+
+                    case "expasaporte":
+                    if(expresiones .alfanumerico.test(e.target.value)) {
+                            document.getElementById('grupo_expasaporte').classList.remove('grupo_form-incorrecto');
+                            document.getElementById('grupo_expasaporte').classList.add('grupo_form-correcto');
+                            document.querySelector('#grupo_expasaporte .formulario_error') .classList.remove('formulario_error-activo')
+                            campos['expasaporte']=true;
+                            
+                        } else{
+                            document.getElementById('grupo_expasaporte').classList.add('grupo_form-incorrecto');
+                            document.getElementById('grupo_expasaporte').classList.remove('grupo_form-correcto');
+                            document.querySelector('#grupo_expasaporte .formulario_error') .classList.add('formulario_error-activo')
+                            campos['expasaporte']=false;
+                        } 
+                    break;
+
+                    case "visa":
+                    if(expresiones .alfanumerico.test(e.target.value)) {
+                            document.getElementById('grupo_visa').classList.remove('grupo_form-incorrecto');
+                            document.getElementById('grupo_visa').classList.add('grupo_form-correcto');
+                            document.querySelector('#grupo_visa .formulario_error') .classList.remove('formulario_error-activo')
+                            campos['visa']=true;
+                            
+                        } else{
+                            document.getElementById('grupo_visa').classList.add('grupo_form-incorrecto');
+                            document.getElementById('grupo_visa').classList.remove('grupo_form-correcto');
+                            document.querySelector('#grupo_visa .formulario_error') .classList.add('formulario_error-activo')
+                            campos['visa']=false;
+                        } 
+                    break;
+
+                    case "exvisa":
+                    if(expresiones .alfanumerico.test(e.target.value)) {
+                            document.getElementById('grupo_exvisa').classList.remove('grupo_form-incorrecto');
+                            document.getElementById('grupo_exvisa').classList.add('grupo_form-correcto');
+                            document.querySelector('#grupo_exvisa .formulario_error') .classList.remove('formulario_error-activo')
+                            campos['exvisa']=true;
+                            
+                        } else{
+                            document.getElementById('grupo_exvisa').classList.add('grupo_form-incorrecto');
+                            document.getElementById('grupo_exvisa').classList.remove('grupo_form-correcto');
+                            document.querySelector('#grupo_exvisa .formulario_error') .classList.add('formulario_error-activo')
+                            campos['exvisa']=false;
+                        } 
+                    break;
+                   
+                }
+            }
+            
+            inputs.forEach((input) => {
+                input.addEventListener('keyup',validarform);
+                input.addEventListener('blur',validarform);
+            });
+
+            formulario.addEventListener('submit',(e) =>{
+                e.preventDefault();//enviar datos
+                if(campos.apellido && campos.nombre && campos.pasaporte && campos.expasaporte && campos.exvisa && campos.visa /* && campos.vacuna &&campos.prueba && campos.migcol && campos.migusa*/ && terminos.checked){
+                    formulario.reset();
+                    
+                }else{
+                    document.getElementById('formulario_mensaje').classList.add('formulario_mensaje-activo')
+                }
+             
+            })
+           
+       </script>
+    
+</body>
+
+</html>

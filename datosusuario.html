@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos</title>
+    <link rel="stylesheet" href="syle3.css">
+</head>
+<body>
+
+    <div class="logo">
+        <img src="img/logo-removebg-preview.png" alt="" width="35%">
+    </div>
+
+    <div class="usuario">
+        <div class="datou">
+           
+             <h3>Nombre: </h3>
+             <p id="nombre"></p>
+            
+        </div>
+        <div class="datou">
+
+            <h3>pasaporte:</h3>
+            <p id="pasaporte"></p>
+        </div>
+        <div class="datou">
+            <h3>Visa</h3>
+            <p id="visa"></p>
+        </div>
+
+        <h2>Prevencion del Covid</h2>
+
+        <div class="covid">
+
+            <div class="datou"> 
+            <h3>Certificado de vacunacion</h3>
+            <img src="img/vacuna.jpg" alt="" width="95%">
+            </div>
+
+            <div class="datou">
+            <h3>Prueba de covid Negativa</h3>
+            <img src="img/prueba.jpg" alt="" width="95%">
+            </div>
+        </div>
+
+        <h2>Otros formularios</h2>
+
+        <div class="formularios">
+            <div class="datou">
+            <h3>check-Mig</h3>
+            <img src="img/colombia-check-mig.jpg" alt="" width="95%">
+            </div>
+
+
+            <div class="datou">
+            <h3>Formulario de atestación</h3>
+            <img src="img/misusa.jpg" alt="" width="95%">
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+    
+    <script>
+        function mostrar(){
+            let valores = JSON.parse(window.localStorage.getItem('usuario'));
+            console.log('valores.usuario')
+
+            document.getElementById('nombre').innerHTML=(valores.nombre)+ " "+ (valores.apellido);
+            document.getElementById('pasaporte').innerHTML="Pasaporte numero: "+(valores.pasaporte)+ " expedido el " + (valores.expasaporte);
+            document.getElementById('visa').innerHTML="Visa numero: "+(valores.visa)+ " expedida el " + (valores.exvisa)
+        }
+        window.onload = function() {
+            mostrar()
+         };
+        
+        
+
+    </script>
+</body>
+</html>
